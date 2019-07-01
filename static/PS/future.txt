@@ -1,0 +1,8 @@
+By the end of the PS we intend to make the entire registration process completely online.
+We are planning to add a feature  for the judges where they can shortlist the projects they think are good enough and then those students can be calles for further rounds.
+A mail will be automatically sent to all the selected participants.
+Further the attendance process will also be made online so that a QR/Barcode can be scanned for the purpose of the tracking of the attendance.
+
+
+For Database management we are planning to use firebase which  is a free of cost google service.
+Further to host the website we may use flask as of now and later may move to a more premium hosting service.
