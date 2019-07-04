@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html>
+    <link rel="stylesheet" href="{% static 'css/registration_style.css' %}">
+    <div class="background-image">
+        <form action="action_page.php">
+        <div class="container">
+            <h1>Register</h1>
+            <p style="font-family: Arial; font-size: 30px;">Please fill in this form to create an account.</p>
+            <hr>
+            <br>
+            <label for="name"><b style="font-family: Comic Sans MS; font-size: 20px;">Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" required>
+            <br>
+
+            <label for="email"><b style="font-family: Comic Sans MS; font-size: 20px;">Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+            <br>
+
+            <label for="psw"><b style="font-family: Comic Sans MS; font-size: 20px;">Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <br>
+            
+            <label for="psw-repeat"><b style="font-family: Comic Sans MS; font-size: 20px;">Repeat Password</b></label>
+            <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            <hr>
+
+            <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
+            <button type="submit" class="registerbtn">Register</button>
+        </div>
+
+        <div class="container signin">
+            <p>Already have an account? <a href="#">Sign in</a>.</p>
+        </div>
+        </form>
+    </div>
+</html>

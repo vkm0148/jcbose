@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from jcbose.views import home_view
+from jcbose.views import home_view, register
 
 urlpatterns = [
 	path('',home_view,name='home'),
+	path('register/',register,name='register'),
     path('admin/', admin.site.urls),
 ]
