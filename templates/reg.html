@@ -19,7 +19,7 @@
 		{% if messages %}
 			{% for message in messages %}
 				<div class="alert alert-{{ message.tags}}" style="font-family: Arial">
-					{{ message }} <a class="ml-2" href="#">Log In</a>
+					{{ message }} <a class="ml-2" href="{% url 'login' %}">Log In</a>
 				</div>
 			{% endfor %}
 		{% endif %}

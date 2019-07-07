@@ -1,0 +1,23 @@
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+<!-- <h1>REGISTRATION HERE</h1> -->
+	<link rel="stylesheet" href="{% static 'css/registration_style.css' %}">
+	<div class="backgrounf-image">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">LOGIN HERE</legend>
+				{{ form|crispy }}
+			</fieldset>
+			<div class="form-group">
+				<button type="submit" class="registerbtn">Log In</button>
+			</div>
+		</form>
+	</div>
+	<div class="border-top pt-3">
+		<small class="text-muted">
+			Not Registered yet? <a class="ml-2" href="{% url 'register' %}">Register Here</a>
+		</small>
+			
+	</div>
