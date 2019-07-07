@@ -53,7 +53,14 @@
 
             <li class="selected">
               <div class="heading">
-                <h1><a href="{% url 'register' %}">Register Now</a></h1>
+                {% if user.is_authenticated %}
+                  <h1><a href="{% url 'profile' %}">Profile</a></h1>
+                  <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                  <h1><a href="{% url 'register' %}">Register Now</a></h1>
+                {% endif %}
+                <br>
+                <br>   
                 <span>Sir J.C. Bose Innovation Display Program</span>
               </div>
               <div class="cd-full-width first-slide">

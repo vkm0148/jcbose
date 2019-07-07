@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% load staticfiles %}
+	<h2>You have been Logged Out!</h2>
+
+	<div class="border-top pt-3">
+			 <a class="ml-2" href="{% url 'login' %}">Log In Again</a>
+			 <br>
+			 <br>
+			 <a class="ml-2" href="{% url 'register' %}">Register</a>
+			 <br>
+			 <br>
+			 <a class="ml-2" href="{% url 'home' %}">Go to Home</a>
+
+			
+	</div>
