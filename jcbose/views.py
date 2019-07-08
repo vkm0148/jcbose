@@ -1,8 +1,10 @@
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from .forms import ProfileForm
 
 # Create your views here.
 
@@ -28,4 +30,5 @@ def register(request):
 
 @login_required
 def profile(request):
-	return render(request, "profile.html")
+	p_form = ProfileForm()
+	return render(request, 'profile.html', {'form' : p_form})
