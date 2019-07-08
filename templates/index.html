@@ -1,5 +1,5 @@
 {% load staticfiles %}
-
+{% load crispy_forms_tags %}
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -43,7 +43,6 @@
                 <li class="selected"><a href="#0"><div class="image-icon"><img src="{% static 'img/home-icon.png' %}"></div><h6>Welcome</h6></a></li>
                 <li><a href="#0"><div class="image-icon"><img src="{% static 'img/about-icon.png' %}"></div><h6>About Us</h6></a></li>
                 <li><a href="#0"><div class="image-icon"><img src="{% static 'img/featured-icon.png' %}"></div><h6>Featured</h6></a></li>
-                <li><a href="#0"><div class="image-icon"><img src="{% static 'img/projects-icon.png' %}"></div><h6>Projects</h6></a></li>
                 <li><a href="#0"><div class="image-icon"><img src="{% static 'img/contact-icon.png' %}"></div><h6>Contact Us</h6></a></li>
               </ul>
             </nav> 
@@ -58,6 +57,7 @@
                   <a href="{% url 'logout' %}">Logout</a>
                 {% else %}
                   <h1><a href="{% url 'register' %}">Register Now</a></h1>
+                  <h2><a href="{% url 'login' %}">Login</a></h2>
                 {% endif %}
                 <br>
                 <br>   
@@ -171,48 +171,7 @@
               </div>
             </li>
 
-            <li>
-              <div class="heading">
-                <h1>Our projects</h1>
-                <span>Here you can check our recent projects</span> 
-              </div>
-              <div class="cd-half-width fourth-slide">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="content fourth-content">
-                        <div class="row">
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-01.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-01.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-02.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-02.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-03.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-03.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-04.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-04.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-05.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-05.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-06.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-06.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-07.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-07.jpg' %}"></a>
-                          </div>
-                          <div class="col-md-3 project-item">
-                            <a href="{% static 'img/item-08.jpg' %}" data-lightbox="image-1"><img src="{% static 'img/project-item-08.jpg' %}"></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>                  
-                </div>
-              </div>
-            </li>
+          
 
             <li>
               <div class="heading">
