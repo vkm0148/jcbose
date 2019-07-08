@@ -9,6 +9,9 @@ from django.contrib import messages
 def home_view(request, *args, **kwargs):
 	return render(request, "index.html", {})
 
+def jcb(request):
+	return render(request, "jcbose.html", {})
+
 def register(request):
 	if request.method == "POST":
 		form = UserCreationForm(request.POST)
