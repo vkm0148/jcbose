@@ -5,4 +5,4 @@ class JcboseConfig(AppConfig):
     name = 'jcbose'
 
     def ready(self):
-    	import jcbose.signals	
+    	import users.signals	

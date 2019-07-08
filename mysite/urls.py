@@ -18,12 +18,13 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-from jcbose.views import home_view, register, profile
+from jcbose.views import home_view, register, profile, jcb
 
 urlpatterns = [
 	path('',home_view,name='home'),
 	path('register/',register,name='register'),
     path('profile/',profile,name='profile'),
+    path('jcbose/',jcb,name='jcbose'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('admin/', admin.site.urls),
