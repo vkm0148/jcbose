@@ -1,7 +1,21 @@
 <div class="content-section">
 	<div class="media">
+<<<<<<< HEAD
 		<!-- <img class="rounded-circle account-img" src="{{ user.profile.image.url }}"> -->
+=======
+		
+>>>>>>> f5ba1bd40e5e86d7192084dfb0ef7f597e3c8257
 		<div class="media-body">
-			<h2 class="account-heading">{{ user.username }}</h2>
+			<h2 style="font-size: 20px; text-align-last: right;">Welcome {{ user.username }}!
+			<a href="{% url 'logout' %}">Logout</a>
+			</h2>
+			<h3>Please in the details to participate in the contest.</h3>
+			<br>
+			
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Submit</button>
+			</form>
 	</div>	
 </div>
