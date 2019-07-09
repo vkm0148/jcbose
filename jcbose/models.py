@@ -16,3 +16,7 @@ def create_profile(sender, **kwargs):
 
 
 post_save.connect(create_profile, sender=User)
+
+class Post(models.Model):
+	post = models.CharField(max_length=500)
+	user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,9 +1,11 @@
+{% load crispy_forms_tags %}
+
 <div class="content-section">
 	<div class="media">
 		
 		<div class="media-body">
 			<h2 style="font-size: 20px; text-align-last: right;">Welcome {{ user.username }}!
-			<a href="{% url 'logout' %}">Logout</a>
+			<button type="submit" class="registerbtn"><a href="{% url 'logout' %}">Logout</a></button>
 			</h2>
 			<h3>Please in the details to participate in the contest.</h3>
 			<br>
@@ -13,5 +15,6 @@
 				{{ form.as_p }}
 				<button type="submit">Submit</button>
 			</form>
+			<!-- <h1>{{ text }}</h1> -->
 	</div>	
 </div>

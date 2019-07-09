@@ -30,5 +30,13 @@ def register(request):
 
 @login_required
 def profile(request):
-	p_form = ProfileForm()
-	return render(request, 'profile.html', {'form' : p_form})
+	p_form = ProfileForm(request.POST or None)
+	text = ''
+	if p_form.is_valid():
+		post = p_form.save(commit=False)
+		post.user = request.user
+		post.save()
+		# text = p_form.cleaned_data['post']
+		# p_form = ProfileForm(None)
+
+	return render(request, 'profile.html', {'form' : p_form, 'text' : text})
