@@ -2,11 +2,13 @@ from django import forms
 from .models import Post
 
 class ProfileForm(forms.ModelForm):
-	post = forms.CharField()
-
-	class Meta:
-		model = Post
-		fields = ('post',)
+	post = forms.CharField(label='Post', max_length=100)
+	Name = forms.CharField(label='Name', max_length=100)
+	Fathers_name = forms.CharField(label='Father\'s name', max_length=100)
+	Mothers_name = forms.CharField(label='Mother\'s name', max_length=100)
+	Mobile_no = forms.IntegerField(label='Mobile no.')
+	# Email_id = forms.EmailField()
+	Resedential_adress=forms.CharField(label='Address', max_length=100)
 
 
 # class NameForm(forms.ModelForm):
