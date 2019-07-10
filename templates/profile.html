@@ -1,9 +1,18 @@
+{% load crispy_forms_tags %}
+
 <div class="content-section">
 	<div class="media">
+<<<<<<< HEAD
 		 <img class="rounded-circle account-img" src="{% static 'img/whatwedo.jpg' %}"> 
 		<div class="media-body">
 			<h2 style="font-size: 20px; text-align-last: right;">Welcome {{ user.username }}!
 			 <a href="{% url 'logout' %}">Logout</a> 
+=======
+
+		<div class="media-body">
+			<h2 style="font-size: 20px; text-align-last: right;">Welcome {{ user.username }}!
+			<button type="submit" class="registerbtn"><a href="{% url 'logout' %}">Logout</a></button>
+>>>>>>> 7a5d18c1bb73f8df109bd7eca34ba0bab6c240c4
 			</h2>
 			<h3>Please in the details to participate in the contest.</h3>
 			<br>
@@ -13,5 +22,6 @@
 				{{ form.as_p }}
 				<button type="submit">Submit</button>
 			</form>
+			<!-- <h1>{{ text }}</h1> -->
 	</div>	
 </div>

@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import ProfileForm
+from .models import Post, Profile
+
 
 # Create your views here.
 
@@ -29,6 +30,35 @@ def register(request):
 	return render(request, "reg.html", {'form': form})
 
 @login_required
-def profile(request):
-	p_form = ProfileForm()
-	return render(request, 'profile.html', {'form' : p_form})
+# def profile(request):
+# 	form = ProfileForm(request.POST or None)
+# 	text = ''
+# 	if form.is_valid():
+# 		post = p_form.save(commit=False)
+# 		post.user = request.user
+# 		post.save()
+# 		# text = p_form.cleaned_data['post']
+# 		# p_form = ProfileForm(None)
+
+# 	else:
+# 		return render(request, 'profile.html', {'form' : form, 'text' : text})
+
+class profile(TemplateView):
+	template_name = 'profile.html'
+
+	def get(self, request, *args, **kwargs):
+		current_user = request.user
+		if current_user.is_authenticated:
+			# If current user if student
+			if UserIdPassword.objects.get(user=current_user).token == 0:
+				# collecting context data to be passed to template html file
+				form_object=ProfileForm.objects.get(Email_id=current_user)
+				# context data collected is stored in params dict
+				params = {
+					'form' : form_object,		}
+				# render template with collected context data
+				return render(request, self.template_name, params)
+			else:
+				return redirect('login')
+		else:
+			return redirect('login')

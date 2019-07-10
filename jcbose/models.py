@@ -6,13 +6,16 @@ from django.db.models.signals import post_save
 
 class Profile(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	
+	token = models.CharField(max_length=10)
+
+class Post(models.Model):
+	post = models.CharField(max_length=500, default="")
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
+	Name = models.CharField(max_length=500, default="")
+	Fathers_name = models.CharField(max_length=500, default="")
+	Mothers_name = models.CharField(max_length=500, default="")
+	Email_id = models.EmailField(blank=True, unique=True)
+	Resedential_address=models.CharField(max_length=500, default="")
+
 	def __str__(self):
-		return self.user.username
-
-def create_profile(sender, **kwargs):
-		if kwargs['created']:
-			user_profile = Profile.objects.create(user=kwargs['instance'])
-
-
-post_save.connect(create_profile, sender=User)
+		return str(self.Email_id)
